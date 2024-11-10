@@ -14,17 +14,27 @@ class TestMathGame(unittest.TestCase):
 
     def test_function_B(self):
         # TODO
-        pass
+        valid_operators = ['+', '-', '*']
+        for _ in range(1000):
+             operator = function_B()
+             self.assertIn(operator, valid_operators)
+        
 
     def test_function_C(self):
             test_cases = [
                 (5, 2, '+', '5 + 2', 7),
-                ''' TODO add more test cases here '''
+                (9, 8, '-', '9 - 8', 1),
+                (3, 5, '*', '3 * 5', 15),
+                (2, 8, '+', '2 + 8', 10),
+                (7, 1, '-', '7 - 1', 6),
+                (6, 6, '*', '6 * 6', 36)
             ]
 
             for num1, num2, operator, expected_problem, expected_answer in test_cases:
                 # TODO
-                pass
+                problem, answer = function_C(num1, num2, operator)
+                self.assertEqual(problem, expected_problem)
+                self.assertEqual(answer,expected_answer)
 
 if __name__ == "__main__":
     unittest.main()
